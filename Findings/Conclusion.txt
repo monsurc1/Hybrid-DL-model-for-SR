@@ -1,0 +1,15 @@
+** Summery from the thesis paper **
+This study aimed to evaluate and propose a hybrid superresolution model that synergizes the capabilities of YOLOv8-seg and EDVR. The primary focus was on the application of computer vision tasks, particularly in enhancing the quality of image and video frames via Super Resolution (SR) techniques.
+
+Our proposition involved extracting feature maps from YOLOv8-seg and aligning these with features from EDVR to produce high-quality image frames with enhanced object detection masks. Despite the high computational requirements, the initial results showed promise. We introduced two fusion modules—Attention Fusion and Stack Fusion—to handle the different types of dimensions and sizes produced by each of the individual models.
+
+The qualitative assessment demonstrated that the proposed model could produce high-quality images, superior to the low-resolution (LR) counterparts. A preliminary PSNR evaluation indicated that our model underperformed compared to the original EDVR model, but this could be
+attributed to resource and time constraints. Implementation was not seamless; both models have significant computational
+requirements, and our available resources were limited.
+
+Moreover, the complexity of EDVR's documentation presented initial hurdles. The study was constrained by limited computational resources and time. Moreover, we focused primarily on qualitative measures, leaving scope for future quantitative assessments. The model could also be tested on a wider variety of datasets and conditions.
+
+The fusion of YOLOv8-seg and EDVR presents a novel approach to SR, merging the capabilities of object detection and SR uniquely. While the results are preliminary, they offer a compelling foundation for future research in computer
+vision.
+
+In summary, the proposed model demonstrates the potential to advance the state of the art in super-resolution methodologies by integrating feature mask information. However, further research is essential to fine-tune the model and evaluate its performance under different conditions and metrics.
