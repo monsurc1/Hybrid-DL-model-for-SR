@@ -1,0 +1,68 @@
+** From the thesis - EXPERIMENTS, RESULTS AND DISCUSSION **
+
+A. YOLOv8-seg uses:
+Initially, we start to implement the YOLOv8-seg pretrained
+model to obtain and examine the feature mask from
+the 3 outputs of the final 3 c2f modules. All the c2f module
+are 3x3 conv.
+We use Jupyter Lab and VSCode on local machine. We
+found the YOLOv8 document is clear enough to carry out this
+task. The creators and maintainers (Ultralytics, 2023) make
+this easy for everybody.
+We use instance segmentation from the pre-trained model
+(yolov8s-seg) for our task[2].
+But, to better understand and tuning the hyperparameter,
+we also used the YOLOv8-seg.yml file like this “model =
+YOLO('yolov8n-seg.yaml')”. Then we trained it on
+COCO128 dataset like this:
+Figure: Training with YOLOv8-seg.yml
+Some results from these are as follows:
+Figure: Feature masks from YOLOv8-seg
+B. EDVR uses:
+Because of the old and complex documentation,
+implementing EDVR model was tedious. For investigating
+the model, the simplest way to use the model are as follows:
+1. Install and update basic environmental packages
+from Python and Pytorch’s torch and torchvison.
+2. Clone the latest EDVR packages from BasicSR
+found in Github repository (Xinntao,
+Xinntao/EDVR: EDVR has been merged into
+BASICSR.) [25]
+3. The following should be done in order to install
+EDVR model as shown in this image:
+Figure: EVDR installation after cloning the EDVR’s GitHub
+repository
+4. Train and test can be done by keeping the datasets on
+disk which is the most easiest way or can be done
+other ways mentioned in their Github repo (link
+given earlier)
+5. We uses image frames from the dataset REDS and
+VID4. Training and testing required greater
+computational power and time on CPU. Even with
+single GPU, it could require hours of time. We use
+Google’s Colab environment.
+6. The results are impressive as stated in the original
+paper. Some results are here which are found same
+in our experiments[29].
+C. Developing our proposed module:
+§ FEATURE EXTRACTION FROM YOLOV8:
+As we plan, according to our proposed method, we need to
+gather feature maps from the YOLOv8-seg model. We used a
+pretrained model for this purpose. In this case, it is
+straightforward as no configuration is needed or intended for
+our study.
+We write a block of code using Pytorch to extract feature
+maps which are generated from the three c2f module.
+Figure: Code example- Feature extraction from
+YOLOv8-seg model with a sample image
+This test was successful. So, we happily processed to the
+next stage.
+We did the same process to extract features by using the
+Pytorch’s ‘hook_install’ method from some image frames
+from Set5 (from calendar) dataset. We saved our 3 feature
+maps from the 3 outputs (which are used later to detection
+module by YOLOv8) as Pytorch model checkpoint files
+(with .pt extension) in a separate directory as shown in the
+figure below:
+Figure: Saving feature maps from YOLOv8-seg model with a sample
+image
