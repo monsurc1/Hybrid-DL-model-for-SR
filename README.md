@@ -3,7 +3,7 @@
 
 A conference paper was written according to the requirement of the thesis submission. It has not been published anywhere. 
 
-This thesis is basically an experiment to demonstrate the knowledge gathered from the MSc course and to push the knowledge boundary to an extent utilizing 2 different models to achieve a goal. 
+This thesis is basically an experiment to demonstrate the knowledge gathered from the MSc course and to push the knowledge boundary to an extent utilizing 2 different models to achieve a SR problem. 
 
 
 _Abstract_:
